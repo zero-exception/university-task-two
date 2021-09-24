@@ -6,8 +6,24 @@
 
 package net.snezhniy;
 
+import java.lang.reflect.InvocationTargetException;
+
 public class App {
-    public static void main(String[] args) {
-        System.out.println("Привет.");
+    public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException {
+        var selectedSolution = (args.length >= 1) ? args[0] : "1";
+        var classPath = "net.snezhniy.solutions.Solution" + selectedSolution;
+
+        Class<?> cls;
+        try {
+            cls = Class.forName(classPath);
+        } catch (ClassNotFoundException e) {
+            System.out.printf("Вы указали некорректный номер задания, класс %s не найден.\n", classPath);
+            return;
+        }
+
+        var obj = cls.getDeclaredConstructor().newInstance();
+        var argTypes = new Class[]{};
+        var run = cls.getDeclaredMethod("run", argTypes);
+        run.invoke(obj);
     }
 }
