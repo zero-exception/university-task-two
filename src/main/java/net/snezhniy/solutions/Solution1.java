@@ -6,9 +6,10 @@
 
 package net.snezhniy.solutions;
 
+import net.snezhniy.Utils;
 import net.snezhniy.interfaces.Solution;
 
-import java.util.Scanner;
+import java.util.Locale;
 
 /*
 Ввести строку, состоящую из нескольких слов, разделенных пробелами.
@@ -20,7 +21,7 @@ import java.util.Scanner;
 public class Solution1 implements Solution {
     @Override
     public void run() {
-        var scan = new Scanner(System.in);
+        var scan = Utils.makeScanner();
 
         System.out.print("Введите строку: ");
         var str = scan.nextLine().strip();
@@ -28,7 +29,7 @@ public class Solution1 implements Solution {
         System.out.print("Введите слово: ");
         var search = scan.nextLine().strip();
 
-        var indexOfSearch = str.indexOf(search);
+        var indexOfSearch = str.toLowerCase().indexOf(search.toLowerCase());
         if (indexOfSearch < 0) {
             System.out.println("Указанное слово не найдено в указанной строке.");
         } else {
