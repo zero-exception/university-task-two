@@ -9,8 +9,6 @@ package net.snezhniy.solutions;
 import net.snezhniy.Utils;
 import net.snezhniy.interfaces.Solution;
 
-import java.util.stream.Stream;
-
 /*
 №10. Ввести строку, состоящую из нескольких слов, разделенных пробелами.
 Подсчитать количество символов в строке (исключая пробелы).

@@ -9,8 +9,6 @@ package net.snezhniy.solutions;
 import net.snezhniy.Utils;
 import net.snezhniy.interfaces.Solution;
 
-import java.util.Locale;
-
 /*
 Ввести строку, состоящую из нескольких слов, разделенных пробелами.
 Ввести произвольное слово. Найти его в строке. Если слово найдено, выдать на
