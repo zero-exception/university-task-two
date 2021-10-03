@@ -9,6 +9,8 @@ package net.snezhniy.solutions;
 import net.snezhniy.Utils;
 import net.snezhniy.interfaces.Solution;
 
+import java.util.Scanner;
+
 /*
 Ввести строку, состоящую из нескольких слов, разделенных пробелами.
 Ввести произвольное слово. Найти его в строке. Если слово найдено, выдать на
@@ -19,15 +21,15 @@ import net.snezhniy.interfaces.Solution;
 public class Solution1 implements Solution {
     @Override
     public void run() {
-        var scan = Utils.makeScanner();
+        Scanner scan = Utils.makeScanner();
 
         System.out.print("Введите строку: ");
-        var str = scan.nextLine().strip();
+        String str = scan.nextLine().trim();
 
         System.out.print("Введите слово: ");
-        var search = scan.nextLine().strip();
+        String search = scan.nextLine().trim();
 
-        var indexOfSearch = str.toLowerCase().indexOf(search.toLowerCase());
+        int indexOfSearch = str.toLowerCase().indexOf(search.toLowerCase());
         if (indexOfSearch < 0) {
             System.out.println("Указанное слово не найдено в указанной строке.");
         } else {

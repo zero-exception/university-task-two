@@ -9,6 +9,8 @@ package net.snezhniy.solutions;
 import net.snezhniy.Utils;
 import net.snezhniy.interfaces.Solution;
 
+import java.util.Scanner;
+
 /*
 №10. Ввести строку, состоящую из нескольких слов, разделенных пробелами.
 Подсчитать количество символов в строке (исключая пробелы).
@@ -17,12 +19,12 @@ import net.snezhniy.interfaces.Solution;
 public class Solution10 implements Solution {
     @Override
     public void run() {
-        var scan = Utils.makeScanner();
+        Scanner scan = Utils.makeScanner();
 
         System.out.print("Введите строку: ");
-        var input = scan.nextLine();
+        String input = scan.nextLine();
 
-        var length = input.replaceAll("\\s+", "").length();
+        int length = input.replaceAll("\\s+", "").length();
         System.out.printf("Длина строки без пробелов: %s", length);
     }
 }

@@ -9,6 +9,8 @@ package net.snezhniy.solutions;
 import net.snezhniy.Utils;
 import net.snezhniy.interfaces.Solution;
 
+import java.util.Scanner;
+
 /*
 №5. Ввести строку, состоящую из нескольких слов, разделенных пробелами.
 Ввести слово, содержащееся в этой строке (таких слов, в общем случае, может
@@ -19,18 +21,18 @@ import net.snezhniy.interfaces.Solution;
 public class Solution5 implements Solution {
     @Override
     public void run() {
-        var scan = Utils.makeScanner();
+        Scanner scan = Utils.makeScanner();
 
         System.out.print("Введите строку: ");
-        var input = scan.nextLine().strip();
+        String input = scan.nextLine().trim();
 
         System.out.print("Введите строку для замены: ");
-        var toReplace = scan.nextLine().strip();
+        String toReplace = scan.nextLine().trim();
 
         System.out.print("Введите строку-заменитель: ");
-        var replaceWith = scan.nextLine().strip();
+        String replaceWith = scan.nextLine().trim();
 
-        var processed = input.replaceAll(toReplace, replaceWith);
+        String processed = input.replaceAll(toReplace, replaceWith);
         System.out.printf("Обработанная строка: %s\n", processed);
     }
 }

@@ -9,6 +9,8 @@ package net.snezhniy.solutions;
 import net.snezhniy.Utils;
 import net.snezhniy.interfaces.Solution;
 
+import java.util.Scanner;
+
 /*
 №4. Ввести произвольную строку. Переписать ее в обратном порядке. Выдать
 на консоль исходную и переписанную строки.
@@ -17,12 +19,12 @@ import net.snezhniy.interfaces.Solution;
 public class Solution4 implements Solution {
     @Override
     public void run() {
-        var scan = Utils.makeScanner();
+        Scanner scan = Utils.makeScanner();
 
         System.out.print("Введите строку: ");
-        var input = scan.nextLine().strip();
+        String input = scan.nextLine().trim();
 
-        var reversedInput = new StringBuilder(input).reverse().toString();
+        String reversedInput = new StringBuilder(input).reverse().toString();
         System.out.printf("Перевёрнутая строка: %s\n", reversedInput);
     }
 }

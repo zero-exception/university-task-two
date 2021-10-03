@@ -10,6 +10,7 @@ import net.snezhniy.Utils;
 import net.snezhniy.interfaces.Solution;
 
 import java.util.Comparator;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -22,12 +23,12 @@ import java.util.stream.Stream;
 public class Solution7 implements Solution {
     @Override
     public void run() {
-        var scan = Utils.makeScanner();
+        Scanner scan = Utils.makeScanner();
 
         System.out.print("Введите строку: ");
-        var input = scan.nextLine().strip();
+        String input = scan.nextLine().trim();
 
-        var sorted = Stream.of(input.split("\\s+"))
+        String sorted = Stream.of(input.split("\\s+"))
                 .sorted(Comparator.comparingInt(String::length))
                 .collect(Collectors.joining(" "));
 

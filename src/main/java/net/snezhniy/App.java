@@ -7,11 +7,12 @@
 package net.snezhniy;
 
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 public class App {
     public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException {
-        var selectedSolution = (args.length >= 1) ? args[0] : "1";
-        var classPath = "net.snezhniy.solutions.Solution" + selectedSolution;
+        String selectedSolution = (args.length >= 1) ? args[0] : "1";
+        String classPath = "net.snezhniy.solutions.Solution" + selectedSolution;
 
         Class<?> cls;
         try {
@@ -21,9 +22,8 @@ public class App {
             return;
         }
 
-        var obj = cls.getDeclaredConstructor().newInstance();
-        var argTypes = new Class[]{};
-        var run = cls.getDeclaredMethod("run", argTypes);
+        Object obj = cls.getDeclaredConstructor().newInstance();
+        Method run = cls.getDeclaredMethod("run");
         run.invoke(obj);
     }
 }

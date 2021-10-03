@@ -9,6 +9,8 @@ package net.snezhniy.solutions;
 import net.snezhniy.Utils;
 import net.snezhniy.interfaces.Solution;
 
+import java.util.Scanner;
+
 /*
 #2 Ввести строку, состоящую из нескольких слов, разделенных пробелами.
 Подсчитать количество слов в строке.
@@ -17,11 +19,11 @@ import net.snezhniy.interfaces.Solution;
 public class Solution2 implements Solution {
     @Override
     public void run() {
-        var scan = Utils.makeScanner();
+        Scanner scan = Utils.makeScanner();
 
         System.out.print("Введите слово: ");
-        var input = scan.nextLine().strip();
-        var wordsCount = input.split("\\s+").length;
+        String input = scan.nextLine().trim();
+        int wordsCount = input.split("\\s+").length;
 
         System.out.printf("Количество слов: %s\n", wordsCount);
     }

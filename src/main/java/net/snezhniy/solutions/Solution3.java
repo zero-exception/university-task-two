@@ -9,6 +9,8 @@ package net.snezhniy.solutions;
 import net.snezhniy.Utils;
 import net.snezhniy.interfaces.Solution;
 
+import java.util.Scanner;
+
 /*
 №3. Ввести произвольное слово. Вывести на консоль сообщение о том,
 является ли введенное слово – словом перевертышем.
@@ -21,12 +23,12 @@ public class Solution3 implements Solution {
 
     @Override
     public void run() {
-        var scan = Utils.makeScanner();
+        Scanner scan = Utils.makeScanner();
 
         System.out.print("Введите строку: ");
-        var input = scan.nextLine().strip();
+        String input = scan.nextLine().trim();
 
-        var msg = (isPalindrome(input)) ? "Вы указали строку-перевёртыш!" : "Вы указали самую обычную строку :(";
+        String msg = (isPalindrome(input)) ? "Вы указали строку-перевёртыш!" : "Вы указали самую обычную строку :(";
         System.out.println(msg);
     }
 }
