@@ -24,6 +24,6 @@ public class Solution9 implements Solution {
         System.out.print("Введите строку: ");
         String input = scan.nextLine();
 
-        System.out.printf("Длина строки: %s", input.length());
+        System.out.printf("Длина строки: %s\n", input.length());
     }
 }

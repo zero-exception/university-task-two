@@ -25,6 +25,6 @@ public class Solution10 implements Solution {
         String input = scan.nextLine();
 
         int length = input.replaceAll("\\s+", "").length();
-        System.out.printf("Длина строки без пробелов: %s", length);
+        System.out.printf("Длина строки без пробелов: %s\n", length);
     }
 }

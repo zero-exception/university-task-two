@@ -33,7 +33,7 @@ public class Solution1 implements Solution {
         if (indexOfSearch < 0) {
             System.out.println("Указанное слово не найдено в указанной строке.");
         } else {
-            System.out.printf("Индекс слова в строке: %s", indexOfSearch);
+            System.out.printf("Индекс слова в строке: %s\n", indexOfSearch);
         }
     }
 }
