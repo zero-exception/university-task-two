@@ -10,6 +10,8 @@ import net.snezhniy.Utils;
 import net.snezhniy.interfaces.Solution;
 
 import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /*
 №6. Ввести строку, состоящую из нескольких слов, разделенных пробелами.
@@ -29,7 +31,10 @@ public class Solution6 implements Solution {
         System.out.print("Введите строку для удаления: ");
         String toRemove = scan.nextLine().trim();
 
-        String processed = input.replaceAll(toRemove, "").replaceAll("\\s+", " ");
+        String processed = Stream.of(input.split("\\s+"))
+                .filter(s -> !s.equalsIgnoreCase(toRemove))
+                .collect(Collectors.joining(" "));
+
         System.out.printf("Обработанная строка: %s\n", processed);
     }
 }
